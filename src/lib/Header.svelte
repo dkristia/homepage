@@ -3,7 +3,7 @@
         <a href="https://dasuki.fi"><h1>&lt;<span style="color:aqua;">Dasuki</span> /&gt;</h1></a>
         <a href="https://github.com/dkristia" target="_blank"><h1><i class="fa-brands fa-github"></i></h1></a>
     </div>
-    <ul>
+    <ul class="big-menu">
         <li><a href="#about">&lt;<span style="color:aqua;">About</span> /&gt;</a></li>
         <li><a href="#projects">&lt;<span style="color:aqua;">Projects</span> /&gt;</a></li>
         <li><a href="#contact">&lt;<span style="color:aqua;">Contact</span> /&gt;</a></li>
@@ -28,6 +28,7 @@
         border-bottom-right-radius: 10px;
         box-shadow: inset 0 -10px 10px -10px rgba(0, 0, 0, 0.9);
         z-index: 3;
+        height: 100px;
     }
     .header {
         display: flex;
@@ -46,14 +47,18 @@
         text-decoration: none;
         font-size: 1.3rem;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 770px) {
         nav {
             flex-direction: column;
-            padding: 1rem 0;
+            height: auto;
         }
-        ul {
-            flex-direction: column;
-            gap: 0.5rem;
+        .big-menu {
+            display: none;
+        }
+    }
+    @media (max-width: 430px) {
+        .header a {
+            font-size: 5vi;
         }
     }
 </style>

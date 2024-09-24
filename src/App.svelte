@@ -39,8 +39,8 @@
   <Header />
 
   <section class="hero">
-    <h1>{heroText}</h1>
-    <p>{heroTagline}</p>
+    <h1 class="hero-text">{heroText}</h1>
+    <p class="hero-tagline">{heroTagline}</p>
   </section>
 
   <section class="sections">
@@ -139,7 +139,14 @@
     justify-content: center;
     text-align: center;
     overflow: hidden;
+  }
+  .hero-text {
+    font-size: 6rem;
+    margin: 0;
+  }
+  .hero-tagline {
     font-size: 3rem;
+    margin: 0;
   }
   .hero::before {
     position: absolute;
@@ -273,6 +280,23 @@
   @media (max-width: 905px) {
     .section > p {
       font-size: 1.3rem;
+    }
+    .contact-box > p {
+      font-size: 4vi;
+    }
+  }
+  @media (max-width: 430px) {
+    .hero-text {
+      font-size: 20vi;
+    }
+    .hero-tagline {
+      font-size: 10vi;
+    }
+    .section > h2 {
+      font-size: 15vi;
+    }
+    .section > p {
+      font-size: 5vi;
     }
   }
 </style>

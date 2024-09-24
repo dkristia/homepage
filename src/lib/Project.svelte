@@ -32,11 +32,10 @@
         font-size: 2rem;
     }
     .project-description {
-        font-size: 1.6rem;
         height: 100%;
 
     }
-    .project-languages {
+    .project-languages, .project-description {
         font-size: 1.6rem;
     }
     @media (max-width: 905px) {
@@ -44,7 +43,15 @@
             flex-direction: column;
         }
         .image-container {
-            min-width: 100%;
+            width: 100%;
+        }
+    }
+    @media (max-width: 430px) {
+        .project-title {
+            font-size: 8vi;
+        }
+        .project-description, .project-languages {
+            font-size: 5vi;
         }
     }
 </style>
