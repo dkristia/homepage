@@ -6,7 +6,7 @@
     const hasType: boolean = type.length > 0;
 </script>
 <code class="code-block">
-    <span class="line">&ThinSpace;&lt;<span class="code-tag">script</span> <span class="code-attribute">lang</span>="<span class="code-value">ts</span>"&gt;</span>
+    <span class="line">&lt;<span class="code-tag">script</span> <span class="code-attribute">lang</span>="<span class="code-value">ts</span>"&gt;</span>
     <span class="line indent"><span class="code-tag">import <span class="code-text">{importable}</span> from</span> "<span class="code-value">https://dasuki.fi/{hasPath ? "#" : ""}{path}</span>";</span>
     <span class="line">&lt;/<span class="code-tag">script</span>&gt;</span>
     <span class="line">&lt;<span class=code-tag>section</span><span class="code-attribute">{hasPath ? " id" : ""}</span>{hasPath ? `="` : ""}<span class="code-value">{path}</span>{hasPath ? `"` : ""}&gt;</span>
