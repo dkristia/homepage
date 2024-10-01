@@ -104,7 +104,7 @@
         <div class="mirror-container" slot="project-image">
           <iframe title="Mirror of this site" src="." class="mirror-frame" height="1080px" />
         </div>
-          <a href="." slot="project-title" class="project highlight"><h1><span style="color:aqua;">dasuki.fi</span></h1></a>
+          <a href="." slot="project-title" class="project highlight"><h1><span style="color:var(--green);">dasuki.fi</span></h1></a>
         <p slot="project-description">This site was made with Svelte & TypeScript. The point of this website is to introduce me and showcase some of the projects I've developed.</p>
         <p slot="project-languages">Languages: <span class="language-svelte highlight">Svelte</span>, <span class="language-typescript highlight">TypeScript</span></p>
       </Project>
@@ -264,7 +264,7 @@
     flex-direction: column;
   }
   .contact-link {
-    color:aqua;
+    color:var(--green);
     text-decoration:none;
   }
   .contact-box > p {

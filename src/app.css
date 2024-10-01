@@ -3,6 +3,7 @@
 html {
     --text-color: white;
     --background-color: #333;
+    --green: #7ed957;
     scroll-behavior: smooth;
 }
 

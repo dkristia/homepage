@@ -38,14 +38,14 @@
     margin-left: 20px;
   }
   .code-attribute {
-    color: aqua;
+    color: var(--green);
     font-style: italic;
   }
   .code-tag {
     color: coral;
   }
   .code-custom-tag {
-    color: aqua;
+    color: var(--green);
   }
   .code-value {
     color: yellow;

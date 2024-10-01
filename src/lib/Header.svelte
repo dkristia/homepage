@@ -1,12 +1,12 @@
 <nav>
     <div class="header">
-        <a href="https://dasuki.fi"><h1>&lt;<span style="color:aqua;">Dasuki</span> /&gt;</h1></a>
+        <a href="https://dasuki.fi"><h1>&lt;<span class="green">Dasuki</span> /&gt;</h1></a>
         <a href="https://github.com/dkristia" target="_blank"><h1><i class="fa-brands fa-github"></i></h1></a>
     </div>
     <ul class="big-menu">
-        <li><a href="#about">&lt;<span style="color:aqua;">About</span> /&gt;</a></li>
-        <li><a href="#projects">&lt;<span style="color:aqua;">Projects</span> /&gt;</a></li>
-        <li><a href="#contact">&lt;<span style="color:aqua;">Contact</span> /&gt;</a></li>
+        <li><a href="#about">&lt;<span class="green">About</span> /&gt;</a></li>
+        <li><a href="#projects">&lt;<span class="green">Projects</span> /&gt;</a></li>
+        <li><a href="#contact">&lt;<span class="green">Contact</span> /&gt;</a></li>
     </ul>
 </nav>
 
@@ -40,6 +40,9 @@
         list-style: none;
         display: flex;
         gap: 1rem;
+    }
+    .green {
+        color: var(--green);
     }
     a {
         font-family: "Source Code Pro", monospace;
