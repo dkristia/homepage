@@ -157,7 +157,7 @@
     background-repeat: no-repeat;
     background-position: center 60%;
     background-size: cover;
-    filter: blur(0.5vw);
+    filter: blur(max(0.5vh, 0.5vw));
     z-index: -1;
   }
 

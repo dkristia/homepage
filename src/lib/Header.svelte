@@ -21,14 +21,14 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem;
+        padding: 1rem 2rem 1.5rem 2rem;
         background-color: var(--background-color);
         color: var(--text-color);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         box-shadow: inset 0 -10px 10px -10px rgba(0, 0, 0, 0.9);
         z-index: 3;
-        height: 100px;
+        height: 50px;
     }
     .header {
         display: flex;
@@ -50,10 +50,13 @@
         text-decoration: none;
         font-size: 1.3rem;
     }
-    @media (max-width: 770px) {
+    @media (max-width: 780px) {
         nav {
             flex-direction: column;
             height: auto;
+        }
+        .header {
+            height: 50px;
         }
         .big-menu {
             display: none;
