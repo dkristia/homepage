@@ -1,7 +1,7 @@
 <footer>
     <div class="links">
         <a href="https://github.com/dkristia" target="_blank"><i class="fa-brands fa-github"></i> dkristia</a>
-        <a href="https://linkedin.com/in/daniel-kristiansson-03a857b0" target="_blank"><i class="fa-brands fa-linkedin"></i> Daniel Kristiansson</a>
+        <a href="https://www.linkedin.com/in/dasuki/" target="_blank"><i class="fa-brands fa-linkedin"></i> Daniel Kristiansson</a>
     </div>
     <a href="https://dasuki.fi">&copy; 2024 Dasuki. All rights reserved.</a>
 </footer>
