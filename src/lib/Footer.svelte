@@ -3,7 +3,7 @@
         <a href="https://github.com/dkristia" target="_blank"><i class="fa-brands fa-github"></i> dkristia</a>
         <a href="https://www.linkedin.com/in/dasuki/" target="_blank"><i class="fa-brands fa-linkedin"></i> Daniel Kristiansson</a>
     </div>
-    <a href="https://dasuki.fi">&copy; 2024 Dasuki. All rights reserved.</a>
+    <a href="https://dasuki.fi">&copy; 2025 Dasuki. All rights reserved.</a>
 </footer>
 
 <style>
