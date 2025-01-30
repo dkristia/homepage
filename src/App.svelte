@@ -46,7 +46,7 @@
   <section class="sections">
     <section class="section" id="about">
       <h2>About Me</h2>
-      <CodeBlock importable="Dasuki" type="software-developer"/>
+      <CodeBlock importable="Dasuki" type="software-developer" path="about" />
       <p>
         Hi, I'm Daniel "Dasuki" Kristiansson, a passionate software developer
         and system administrator born and raised in Espoo, Finland. I have
