@@ -4,6 +4,8 @@
   import CodeBlock from "./lib/CodeBlock.svelte";
   import Project from "./lib/Project.svelte";
   import '@fortawesome/fontawesome-free/css/all.css';
+  import { onMount } from 'svelte';
+  import { fly } from 'svelte/transition';
 
   const heroTaglines: string[] = [
     "Software Developer",
@@ -14,13 +16,46 @@
 
   const heroText: string = "Dasuki";
   let heroTagline: string = heroTaglines[0];
+  let displayedTagline: string = "";
+  let isTyping: boolean = false;
+  let showCursor: boolean = true;
 
-  function changeHeroTagline(
+  async function typeText(text: string, speed: number = 70): Promise<void> {
+    isTyping = true;
+    displayedTagline = "";
+    
+    for (let i = 0; i < text.length; i++) {
+      displayedTagline += text[i];
+      await new Promise(resolve => setTimeout(resolve, speed));
+    }
+    
+    isTyping = false;
+  }
+  async function eraseText(speed: number = 40): Promise<void> {
+    isTyping = true;
+    
+    while (displayedTagline.length > 0) {
+      displayedTagline = displayedTagline.slice(0, -1);
+      await new Promise(resolve => setTimeout(resolve, speed));
+    }
+    
+    isTyping = false;
+  }
+
+  async function changeHeroTagline(
     index: number,
     changeTagline: (tagline: string) => void,
     taglines: string[]
-  ): void {
-    changeTagline(taglines[index]);
+  ): Promise<void> {
+    const nextTagline = taglines[index];
+    
+    if (displayedTagline.length > 0) {
+      await eraseText();
+    }
+    
+    changeTagline(nextTagline);
+    await typeText(nextTagline);
+    
     setTimeout(
       () =>
         changeHeroTagline(
@@ -31,7 +66,26 @@
       2000
     );
   }
-  changeHeroTagline(0, (tagline) => (heroTagline = tagline), heroTaglines);
+
+  onMount(() => {
+    typeText(heroTaglines[0]).then(() => {
+      setTimeout(() => {
+        changeHeroTagline(1, (tagline) => (heroTagline = tagline), heroTaglines);
+      }, 2000);
+    });
+    
+    setInterval(() => {
+      showCursor = !showCursor;
+    }, 500);
+  });
+
+  let mounted = false;
+  
+  onMount(() => {
+    setTimeout(() => {
+      mounted = true;
+    }, 100);
+  });
 </script>
 
 <main>
@@ -39,8 +93,12 @@
   <Header />
 
   <section class="hero">
-    <h1 class="hero-text">{heroText}</h1>
-    <p class="hero-tagline">{heroTagline}</p>
+    {#if mounted}
+      <h1 class="hero-text" in:fly={{ y: 30, duration: 1000 }}>{heroText}</h1>
+      <p class="hero-tagline" in:fly={{ y: 30, duration: 1200, delay: 300 }}>
+        <span>{displayedTagline}</span><span class="cursor" class:blink={!isTyping} class:hidden={!showCursor}>|</span>
+      </p>
+    {/if}
   </section>
 
   <section class="sections">
@@ -253,6 +311,31 @@
     align-items: center;
     height: 0px;
   }
+
+  .cursor {
+    display: inline-block;
+    color: var(--green);
+    font-weight: bold;
+    animation: blink 1s step-end infinite;
+  }
+
+  .cursor.hidden {
+    opacity: 0;
+  }
+
+  .cursor.blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    from, to {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
   @media (max-width: 905px) {
     .mirror-container {
       height: 500px;
