@@ -20,6 +20,10 @@
   let isTyping: boolean = false;
   let showCursor: boolean = true;
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentRecursionLevel = parseInt(urlParams.get('recursion') || '0');
+  const maxRecursionLevel = 3;
+
   async function typeText(text: string, speed: number = 70): Promise<void> {
     isTyping = true;
     displayedTagline = "";
@@ -160,7 +164,11 @@
       </Project>
       <Project>
         <div class="mirror-container" slot="project-image">
-          <iframe title="Mirror of this site" src="." class="mirror-frame" height="1080px" />
+          {#if currentRecursionLevel < maxRecursionLevel}
+            <iframe title="Mirror of this site" src=".?recursion={currentRecursionLevel + 1}" class="mirror-frame" height="1080px" />
+          {:else}
+            <div class="max-recursion">You lost the game</div>
+          {/if}
         </div>
           <a href="." slot="project-title" class="project highlight"><h1><span style="color:var(--green);">dasuki.fi</span></h1></a>
         <p slot="project-description">This site was made with Svelte & TypeScript. The point of this website is to introduce me and showcase some of the projects I've developed.</p>
@@ -310,6 +318,15 @@
     justify-content: center;
     align-items: center;
     height: 0px;
+  }
+
+  .max-recursion {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--green);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
   }
 
   .cursor {
