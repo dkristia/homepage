@@ -102,9 +102,9 @@
       <p class="hero-tagline" in:fly={{ y: 30, duration: 1200, delay: 300 }}>
         <span>{displayedTagline}</span><span class="cursor" class:blink={!isTyping} class:hidden={!showCursor}>|</span>
       </p>
-      <div class="scroll-indicator" in:fly={{ y: 30, duration: 800, delay: 1500 }}>
+      <button aria-label="scroll" on:click={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })} class="scroll-indicator" in:fly={{ y: 30, duration: 800, delay: 1500 }}>
         <i class="fas fa-chevron-down"></i>
-      </div>
+      </button>
     {/if}
   </section>
 
@@ -363,6 +363,8 @@
   }
 
   .scroll-indicator {
+    background: none;
+    border: none;
     position: absolute;
     bottom: 40px;
     font-size: 1.8rem;
