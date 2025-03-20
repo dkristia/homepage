@@ -102,6 +102,9 @@
       <p class="hero-tagline" in:fly={{ y: 30, duration: 1200, delay: 300 }}>
         <span>{displayedTagline}</span><span class="cursor" class:blink={!isTyping} class:hidden={!showCursor}>|</span>
       </p>
+      <div class="scroll-indicator" in:fly={{ y: 30, duration: 800, delay: 1500 }}>
+        <i class="fas fa-chevron-down"></i>
+      </div>
     {/if}
   </section>
 
@@ -356,6 +359,33 @@
   @media (max-width: 905px) {
     .mirror-container {
       height: 500px;
+    }
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    font-size: 1.8rem;
+    color: white;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .scroll-indicator:hover {
+    opacity: 1;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
     }
   }
   
