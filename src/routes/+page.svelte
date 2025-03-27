@@ -9,6 +9,8 @@
   import './app.css';
   import { page } from '$app/stores';
 
+  export let data: { recursionLevel: number };
+
   const heroTaglines: string[] = [
     "Software Developer",
     "Ohjelmistokehittäjä",
@@ -22,7 +24,7 @@
   let isTyping: boolean = false;
   let showCursor: boolean = true;
 
-  $: currentRecursionLevel = parseInt($page.url.searchParams.get('recursion') || '0');
+  const currentRecursionLevel = data.recursionLevel;
   const maxRecursionLevel = 3;
 
   async function typeText(text: string, speed: number = 70): Promise<void> {

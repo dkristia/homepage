@@ -3,6 +3,7 @@
   "specifiers": {
     "npm:@fortawesome/fontawesome-free@^6.6.0": "6.7.2",
     "npm:@sveltejs/adapter-auto@4": "4.0.0_@sveltejs+kit@2.20.2__@sveltejs+vite-plugin-svelte@5.0.3___svelte@5.25.3____acorn@8.14.1___vite@6.2.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_svelte@5.25.3__acorn@8.14.1_vite@6.2.3",
+    "npm:@sveltejs/adapter-static@^3.0.8": "3.0.8_@sveltejs+kit@2.20.2__@sveltejs+vite-plugin-svelte@5.0.3___svelte@5.25.3____acorn@8.14.1___vite@6.2.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_svelte@5.25.3__acorn@8.14.1_vite@6.2.3",
     "npm:@sveltejs/kit@^2.16.0": "2.20.2_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_svelte@5.25.3__acorn@8.14.1_vite@6.2.3",
     "npm:@sveltejs/vite-plugin-svelte@5": "5.0.3_svelte@5.25.3__acorn@8.14.1_vite@6.2.3",
     "npm:prettier-plugin-svelte@^3.3.3": "3.3.3_prettier@3.5.3_svelte@5.25.3__acorn@8.14.1",
@@ -196,6 +197,12 @@
       "dependencies": [
         "@sveltejs/kit",
         "import-meta-resolve"
+      ]
+    },
+    "@sveltejs/adapter-static@3.0.8_@sveltejs+kit@2.20.2__@sveltejs+vite-plugin-svelte@5.0.3___svelte@5.25.3____acorn@8.14.1___vite@6.2.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_svelte@5.25.3__acorn@8.14.1_vite@6.2.3": {
+      "integrity": "sha512-YaDrquRpZwfcXbnlDsSrBQNCChVOT9MGuSg+dMAyfsAa1SmiAhrA5jUYUiIMC59G92kIbY/AaQOWcBdq+lh+zg==",
+      "dependencies": [
+        "@sveltejs/kit"
       ]
     },
     "@sveltejs/kit@2.20.2_@sveltejs+vite-plugin-svelte@5.0.3__svelte@5.25.3___acorn@8.14.1__vite@6.2.3_svelte@5.25.3__acorn@8.14.1_vite@6.2.3": {
@@ -491,6 +498,7 @@
       "dependencies": [
         "npm:@fortawesome/fontawesome-free@^6.6.0",
         "npm:@sveltejs/adapter-auto@4",
+        "npm:@sveltejs/adapter-static@^3.0.8",
         "npm:@sveltejs/kit@^2.16.0",
         "npm:@sveltejs/vite-plugin-svelte@5",
         "npm:prettier-plugin-svelte@^3.3.3",
