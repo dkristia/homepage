@@ -1,11 +1,13 @@
 <script lang="ts">
-  import Header from "./lib/Header.svelte";
-  import Footer from "./lib/Footer.svelte";
-  import CodeBlock from "./lib/CodeBlock.svelte";
-  import Project from "./lib/Project.svelte";
+  import Header from "$lib/Header.svelte";
+  import Footer from "$lib/Footer.svelte";
+  import CodeBlock from "$lib/CodeBlock.svelte";
+  import Project from "$lib/Project.svelte";
   import '@fortawesome/fontawesome-free/css/all.css';
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
+  import './app.css';
+  import { page } from '$app/stores';
 
   const heroTaglines: string[] = [
     "Software Developer",
@@ -20,8 +22,7 @@
   let isTyping: boolean = false;
   let showCursor: boolean = true;
 
-  const urlParams = new URLSearchParams(window.location.search);
-  const currentRecursionLevel = parseInt(urlParams.get('recursion') || '0');
+  $: currentRecursionLevel = parseInt($page.url.searchParams.get('recursion') || '0');
   const maxRecursionLevel = 3;
 
   async function typeText(text: string, speed: number = 70): Promise<void> {
