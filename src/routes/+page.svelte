@@ -6,8 +6,6 @@
   import '@fortawesome/fontawesome-free/css/all.css';
   import { onMount } from 'svelte';
   import { fly } from 'svelte/transition';
-  import './app.css';
-  import { page } from '$app/stores';
 
   export let data: { recursionLevel: number };
 
